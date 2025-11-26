@@ -56,7 +56,7 @@ const Hero = () => {
           }}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
                 <span className="block">Building stuff,</span>
-                <span className="block text-6xl">that <converts/><span className="text-primary">&lt;converts/&gt;</span></span>
+                <span className="block text-6xl">that <converts /><span className="text-primary">&lt;converts/&gt;</span></span>
               </h1>
             </motion.div>
 
@@ -70,9 +70,9 @@ const Hero = () => {
             duration: 0.8,
             delay: 0.15,
             ease: [0.22, 1, 0.36, 1]
-          }} className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
-              Revamping websites for conversions like rent's due today.
-              <br className="hidden sm:block" />
+          }} className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0">Revamping websites for conversions like rent's due today.
+
+(No room for delays or half measures)<br className="hidden sm:block" />
               (No room for delays or half measures)
             </motion.p>
 
