@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Zap, Shield, Code2 } from 'lucide-react';
-
 const Hero = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen relative overflow-hidden flex items-center">
+  return <section id="home" className="min-h-screen relative overflow-hidden flex items-center">
       {/* Swirl glow animation - top left */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none">
         <svg viewBox="0 0 600 600" className="w-full h-full opacity-40">
@@ -22,21 +21,15 @@ const Hero = () => {
             </radialGradient>
           </defs>
           {/* Concentric arcs */}
-          {[...Array(8)].map((_, i) => (
-            <motion.circle
-              key={i}
-              cx="0"
-              cy="0"
-              r={80 + i * 60}
-              fill="none"
-              stroke="url(#swirlGlow)"
-              strokeWidth="1"
-              strokeOpacity={0.3 - i * 0.03}
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: i * 0.15, ease: "easeOut" }}
-            />
-          ))}
+          {[...Array(8)].map((_, i) => <motion.circle key={i} cx="0" cy="0" r={80 + i * 60} fill="none" stroke="url(#swirlGlow)" strokeWidth="1" strokeOpacity={0.3 - i * 0.03} initial={{
+          pathLength: 0
+        }} animate={{
+          pathLength: 1
+        }} transition={{
+          duration: 2,
+          delay: i * 0.15,
+          ease: "easeOut"
+        }} />)}
         </svg>
       </div>
 
@@ -51,44 +44,53 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 40
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+          }}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
                 <span className="block">Building stuff,</span>
-                <span className="block">that <span className="text-primary">&lt;converts/&gt;</span></span>
+                <span className="block text-6xl">that <converts/><span className="text-primary">&lt;converts/&gt;</span></span>
               </h1>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0"
-            >
+            <motion.p initial={{
+            opacity: 0,
+            y: 40
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.15,
+            ease: [0.22, 1, 0.36, 1]
+          }} className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
               Revamping websites for conversions like rent's due today.
               <br className="hidden sm:block" />
               (No room for delays or half measures)
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
-            >
-              <button 
-                onClick={() => scrollToSection('#contact')}
-                className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base"
-              >
+            <motion.div initial={{
+            opacity: 0,
+            y: 40
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: [0.22, 1, 0.36, 1]
+          }} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <button onClick={() => scrollToSection('#contact')} className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base">
                 Tap to make website convert
               </button>
-              <button 
-                onClick={() => scrollToSection('#portfolio')}
-                className="btn-outline flex items-center justify-center gap-2 group text-sm sm:text-base"
-              >
+              <button onClick={() => scrollToSection('#portfolio')} className="btn-outline flex items-center justify-center gap-2 group text-sm sm:text-base">
                 View My Works
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
               </button>
@@ -96,19 +98,26 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Browser Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center lg:justify-end mt-8 lg:mt-0"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 60
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: [0.22, 1, 0.36, 1]
+        }} className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="relative w-full max-w-md lg:max-w-lg">
               {/* Browser mockup */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10"
-              >
+              <motion.div animate={{
+              y: [0, -8, 0]
+            }} transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }} className="relative z-10">
                 <div className="bg-card rounded-xl sm:rounded-2xl border border-border overflow-hidden shadow-2xl shadow-primary/10">
                   {/* Browser top bar */}
                   <div className="bg-secondary/80 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2">
@@ -152,17 +161,24 @@ const Hero = () => {
               </motion.div>
 
               {/* Floating cards */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="absolute -left-4 sm:-left-8 md:-left-16 top-1/4 z-20"
-              >
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="bg-card/95 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-2.5 sm:p-4 shadow-xl"
-                >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0.8
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.6,
+              delay: 0.8
+            }} className="absolute -left-4 sm:-left-8 md:-left-16 top-1/4 z-20">
+                <motion.div animate={{
+                y: [0, -6, 0]
+              }} transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }} className="bg-card/95 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-2.5 sm:p-4 shadow-xl">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                       <Zap size={16} className="sm:w-5 sm:h-5 text-primary" />
@@ -175,17 +191,24 @@ const Hero = () => {
                 </motion.div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="absolute -right-2 sm:-right-4 md:-right-12 bottom-1/4 z-20"
-              >
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="bg-card/95 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-2.5 sm:p-4 shadow-xl"
-                >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0.8
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.6,
+              delay: 1
+            }} className="absolute -right-2 sm:-right-4 md:-right-12 bottom-1/4 z-20">
+                <motion.div animate={{
+                y: [0, -6, 0]
+              }} transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }} className="bg-card/95 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-2.5 sm:p-4 shadow-xl">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                       <Shield size={16} className="sm:w-5 sm:h-5 text-primary" />
@@ -207,8 +230,6 @@ const Hero = () => {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-background to-transparent" />
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
