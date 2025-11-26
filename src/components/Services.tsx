@@ -1,38 +1,38 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MessageSquare, Zap, Code, Palette, TrendingUp, Shield } from 'lucide-react';
+import { TrendingUp, Zap, Code, Palette, Search, Wrench } from 'lucide-react';
 
 const services = [
   {
-    icon: MessageSquare,
-    title: 'Improve Store Conversion Rate',
-    description: 'Ready to turn clicks into cash? Our e-focus CRO turns doubts into the road to market lifesavers. We\'ll analyze your user journey, fix your pain points, integrate with your tracking or CRM to enable reasonable report. Say goodbye to leaps of faith. Expect data-backed insights that keep websites churning conversions that\'s unreal.'
+    icon: TrendingUp,
+    title: 'Conversion Optimization',
+    description: 'Your website gets traffic but no sales? I analyze user behavior, fix friction points, and optimize every step of your funnel. Data-driven changes that actually move the needle.'
   },
   {
     icon: Zap,
-    title: '3x (or more) Store Speed',
-    description: 'In the fast-paced world of the Internet, speed is everything. That\'s why we are committed to a switch on words that\'s all about making your web portfolio move at the speed of light, no compromise about that. It\'s from page loading initiation to render. Fancy reducing visitor wait time to millisec? Say no more.'
+    title: 'Speed Optimization',
+    description: 'Slow sites kill conversions. I make your website load in under a second—optimized images, clean code, and lightning-fast hosting. Speed that keeps visitors engaged.'
   },
   {
     icon: Code,
     title: 'Custom Web Development',
-    description: 'From concept to deployment, we build scalable web applications using modern frameworks like React, Next.js, and Node.js. Clean code, best practices, and future-proof architecture.'
+    description: 'From landing pages to full web apps. React, Next.js, TypeScript—modern tech stack, clean architecture, scalable code. Built right the first time.'
   },
   {
     icon: Palette,
     title: 'UI/UX Design',
-    description: 'Beautiful interfaces that users love. We combine aesthetics with usability to create memorable digital experiences that keep users engaged and coming back.'
+    description: 'Beautiful interfaces that users actually enjoy. I combine aesthetics with usability to create experiences that convert visitors into loyal customers.'
   },
   {
-    icon: TrendingUp,
-    title: 'SEO Optimization',
-    description: 'Get found online. We implement technical SEO best practices, optimize content, and improve site structure to boost your organic rankings and drive traffic.'
+    icon: Search,
+    title: 'SEO That Works',
+    description: 'No black-hat tricks. Technical SEO, content optimization, and site structure that Google loves. Organic traffic that compounds over time.'
   },
   {
-    icon: Shield,
-    title: 'Maintenance & Support',
-    description: 'Keep your site running smoothly with our ongoing maintenance packages. Security updates, performance monitoring, and priority support when you need it.'
+    icon: Wrench,
+    title: 'Ongoing Support',
+    description: 'Your site needs maintenance. Security updates, performance monitoring, quick fixes—I keep your digital presence running smooth so you can focus on your business.'
   }
 ];
 
@@ -43,48 +43,46 @@ const Services = () => {
   return (
     <section id="services" className="section-padding relative overflow-hidden bg-card/30" ref={ref}>
       {/* Background accents */}
-      <div className="absolute left-0 top-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute right-0 bottom-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl" />
+      <div className="absolute left-0 top-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute right-0 bottom-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/3 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left side - sticky header */}
-          <div className="lg:sticky lg:top-32">
+          <div className="lg:sticky lg:top-32 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                Our <span className="text-primary">&lt;services/&gt;</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
+                What I <span className="text-primary">&lt;do/&gt;</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                At Call to Actions, we're not just in the business of 'building' to be converting & 
-                delivering websites. We're in the business of crafting digital masterpieces that 
-                captivate, convert, and make you feel like the coolest, most powerful version of 
-                e-commerce.
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+                I don't just build websites. I build digital assets that work 24/7 to grow your business. 
+                Every project is crafted to convert, perform, and scale.
               </p>
             </motion.div>
           </div>
 
           {/* Right side - service cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="card-dark group cursor-pointer"
               >
-                <div className="flex gap-5">
+                <div className="flex gap-4 sm:gap-5">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                      <service.icon size={24} className="text-primary" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-500">
+                      <service.icon size={20} className="sm:w-6 sm:h-6 text-primary" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-display font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-500">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed text-sm">
