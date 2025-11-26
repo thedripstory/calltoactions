@@ -104,9 +104,7 @@ const About = () => {
                 Hey, I'm AG. No 43-member team here—just me and a tight-knit crew of 
                 talented developers who actually give a damn about your project.
               </p>
-              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">
-                Based in Chennai & New Delhi, I've spent years building websites that don't just look good—
-                they <span className="text-primary font-medium">convert</span>. Every pixel, every line of code, 
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">Based in Dubai, I've spent years building websites that don't just look good— they convert. Every pixel, every line of code, every interaction is designed with one goal: turning your visitors into customers.<span className="text-primary font-medium">convert</span>. Every pixel, every line of code, 
                 every interaction is designed with one goal: turning your visitors into customers.
               </p>
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
