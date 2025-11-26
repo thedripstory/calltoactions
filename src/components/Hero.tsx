@@ -62,7 +62,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-6xl font-display font-bold leading-tight">
                 <span className="block">Building stuff,</span>
                 <span className="block md:whitespace-nowrap">that <span className="text-primary">&lt;converts/&gt;</span></span>
               </h1>
