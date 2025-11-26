@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
-import logoWhite from '@/assets/logo-white.png';
+import logoWhite from '@/assets/logo-white.svg';
 
 const footerLinks = [
   { name: 'About', href: '#about' },
