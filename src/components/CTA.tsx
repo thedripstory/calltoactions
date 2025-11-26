@@ -41,7 +41,7 @@ const CTA = () => {
             className="btn-primary flex items-center justify-center gap-2 mx-auto text-sm sm:text-base"
           >
             Start Your Project
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight size={18} />
           </motion.button>
         </motion.div>
       </div>

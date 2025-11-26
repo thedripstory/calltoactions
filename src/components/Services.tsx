@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { TrendingUp, Zap, Code, Palette, Search, Wrench } from 'lucide-react';
+import { TrendingUp, Zap, Code, Palette, Search, Wrench, Bot } from 'lucide-react';
 
 const services = [
   {
@@ -23,6 +23,11 @@ const services = [
     icon: Palette,
     title: 'UI/UX Design',
     description: 'Beautiful interfaces that users actually enjoy. I combine aesthetics with usability to create experiences that convert visitors into loyal customers.'
+  },
+  {
+    icon: Bot,
+    title: 'AI Discoverability',
+    description: 'Get found by AI. I build websites optimized for ChatGPT, Perplexity, and other AI assistants. Structured data, semantic markup, and content that AI can recommend and index.'
   },
   {
     icon: Search,
