@@ -64,7 +64,7 @@ const Hero = () => {
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
                 <span className="block">Building stuff,</span>
-                <span className="block">that <span className="text-primary">&lt;converts/&gt;</span></span>
+                <span className="block md:whitespace-nowrap">that <span className="text-primary">&lt;converts/&gt;</span></span>
               </h1>
             </motion.div>
 
