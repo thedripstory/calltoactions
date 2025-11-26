@@ -46,13 +46,13 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section-padding relative overflow-hidden bg-card/30" ref={ref}>
+    <section id="services" className="section-padding relative bg-card/30" ref={ref}>
       {/* Background accents */}
-      <div className="absolute left-0 top-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute right-0 bottom-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/3 rounded-full blur-3xl" />
+      <div className="absolute left-0 top-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute right-0 bottom-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 lg:items-start">
           {/* Left side - sticky header */}
           <div className="lg:sticky lg:top-32 lg:self-start text-center lg:text-left">
             <motion.div
