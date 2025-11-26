@@ -54,7 +54,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left side - sticky header */}
-          <div className="lg:sticky lg:top-32 text-center lg:text-left">
+          <div className="lg:sticky lg:top-32 lg:self-start text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
