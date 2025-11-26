@@ -90,10 +90,7 @@ const Hero = () => {
               <button onClick={() => scrollToSection('#contact')} className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base">
                 Tap to make website convert
               </button>
-              <button onClick={() => scrollToSection('#portfolio')} className="btn-outline flex items-center justify-center gap-2 group text-sm sm:text-base">
-                View My Works
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              
             </motion.div>
           </div>
 
