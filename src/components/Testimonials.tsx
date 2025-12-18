@@ -15,7 +15,7 @@ const testimonials = [
     role: "Founder, GrowthCo",
   },
   {
-    quote: "Finally, a team that understands business. AG & Rohit didn't just build a website—they built a tool that actually drives revenue.",
+    quote: "Finally, a team that understands business. AG & Rohit didn't just build a website - they built a tool that actually drives revenue.",
     author: "Ananya Patel",
     role: "Marketing Director, ScaleUp",
   },

@@ -14,7 +14,7 @@ const steps = [
     icon: Lightbulb,
     number: '02',
     title: 'Strategy & Design',
-    description: 'We create a plan tailored to your needs—wireframes, design concepts, and a clear roadmap for your project.',
+    description: 'We create a plan tailored to your needs - wireframes, design concepts, and a clear roadmap for your project.',
   },
   {
     icon: Code,
