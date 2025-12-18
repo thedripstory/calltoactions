@@ -12,12 +12,12 @@ const services = [
   {
     icon: Zap,
     title: 'Speed Optimization',
-    description: 'Slow sites kill conversions. We make your website load in under a second—optimized images, clean code, and lightning-fast hosting. Speed that keeps visitors engaged.'
+    description: 'Slow sites kill conversions. We make your website load in under a second - optimized images, clean code, and lightning-fast hosting. Speed that keeps visitors engaged.'
   },
   {
     icon: Code,
     title: 'Custom Web Development',
-    description: 'From landing pages to full web apps. React, Next.js, TypeScript—modern tech stack, clean architecture, scalable code. Built right the first time.'
+    description: 'From landing pages to full web apps. React, Next.js, TypeScript - modern tech stack, clean architecture, scalable code. Built right the first time.'
   },
   {
     icon: Palette,
@@ -37,7 +37,7 @@ const services = [
   {
     icon: Wrench,
     title: 'Ongoing Support',
-    description: 'Your site needs maintenance. Security updates, performance monitoring, quick fixes—we keep your digital presence running smooth so you can focus on your business.'
+    description: 'Your site needs maintenance. Security updates, performance monitoring, quick fixes - we keep your digital presence running smooth so you can focus on your business.'
   }
 ];
 
