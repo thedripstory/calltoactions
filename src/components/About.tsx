@@ -103,12 +103,12 @@ const About = () => {
                 </motion.div>
               </motion.div>
               
-              {/* Rohit's Photo - smaller, overlapping */}
+              {/* Rohit's Photo - same size, positioned lower */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { 
                   opacity: hoveredImage === 'ag' ? 0.6 : 1, 
-                  scale: hoveredImage === 'rohit' ? 1.25 : hoveredImage === 'ag' ? 0.92 : 1,
+                  scale: hoveredImage === 'rohit' ? 1.12 : hoveredImage === 'ag' ? 0.92 : 1,
                   zIndex: hoveredImage === 'rohit' ? 30 : 20
                 } : { opacity: 0, scale: 0.8 }}
                 transition={{ 
@@ -118,7 +118,7 @@ const About = () => {
                 }}
                 onMouseEnter={() => setHoveredImage('rohit')}
                 onMouseLeave={() => setHoveredImage(null)}
-                className="relative -ml-14 sm:-ml-20 mt-16 sm:mt-24 w-40 sm:w-48 md:w-56 cursor-pointer"
+                className="relative -ml-14 sm:-ml-20 self-end w-52 sm:w-64 md:w-72 cursor-pointer origin-bottom"
               >
                 <motion.div 
                   animate={{
