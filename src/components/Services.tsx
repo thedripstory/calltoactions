@@ -7,12 +7,12 @@ const services = [
   {
     icon: TrendingUp,
     title: 'Conversion Optimization',
-    description: 'Your website gets traffic but no sales? I analyze user behavior, fix friction points, and optimize every step of your funnel. Data-driven changes that actually move the needle.'
+    description: 'Your website gets traffic but no sales? We analyze user behavior, fix friction points, and optimize every step of your funnel. Data-driven changes that actually move the needle.'
   },
   {
     icon: Zap,
     title: 'Speed Optimization',
-    description: 'Slow sites kill conversions. I make your website load in under a second—optimized images, clean code, and lightning-fast hosting. Speed that keeps visitors engaged.'
+    description: 'Slow sites kill conversions. We make your website load in under a second—optimized images, clean code, and lightning-fast hosting. Speed that keeps visitors engaged.'
   },
   {
     icon: Code,
@@ -22,12 +22,12 @@ const services = [
   {
     icon: Palette,
     title: 'UI/UX Design',
-    description: 'Beautiful interfaces that users actually enjoy. I combine aesthetics with usability to create experiences that convert visitors into loyal customers.'
+    description: 'Beautiful interfaces that users actually enjoy. We combine aesthetics with usability to create experiences that convert visitors into loyal customers.'
   },
   {
     icon: Bot,
     title: 'AI Discoverability',
-    description: 'Get found by AI. I build websites optimized for ChatGPT, Perplexity, and other AI assistants. Structured data, semantic markup, and content that AI can recommend and index.'
+    description: 'Get found by AI. We build websites optimized for ChatGPT, Perplexity, and other AI assistants. Structured data, semantic markup, and content that AI can recommend and index.'
   },
   {
     icon: Search,
@@ -37,7 +37,7 @@ const services = [
   {
     icon: Wrench,
     title: 'Ongoing Support',
-    description: 'Your site needs maintenance. Security updates, performance monitoring, quick fixes—I keep your digital presence running smooth so you can focus on your business.'
+    description: 'Your site needs maintenance. Security updates, performance monitoring, quick fixes—we keep your digital presence running smooth so you can focus on your business.'
   }
 ];
 
@@ -61,10 +61,10 @@ const Services = () => {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
-                What I <span className="text-primary">&lt;do/&gt;</span>
+                What we <span className="text-primary">&lt;do/&gt;</span>
               </h2>
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                I don't just build websites. I build digital assets that work 24/7 to grow your business. 
+                We don't just build websites. We build digital assets that work 24/7 to grow your business. 
                 Every project is crafted to convert, perform, and scale.
               </p>
             </motion.div>

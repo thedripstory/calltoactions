@@ -38,7 +38,7 @@ const Contact = () => {
       if (error) throw error;
       
       setIsSubmitted(true);
-      toast.success("Message sent! I'll get back to you within 24 hours.");
+      toast.success("Message sent! We'll get back to you within 24 hours.");
       setFormData({ email: '', service: '', message: '' });
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (error) {
@@ -81,11 +81,11 @@ const Contact = () => {
             <div className="space-y-4">
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                 Need a website that actually converts? Or just want to chat about 
-                web development? I'm always excited to hear about new projects.
+                web development? We're always excited to hear about new projects.
               </p>
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                Drop me a message and I'll get back to you within 24 hours. 
-                No sales pitch, just straight talk about how I can help.
+                Drop us a message and we'll get back to you within 24 hours. 
+                No sales pitch, just straight talk about how we can help.
               </p>
             </div>
             
@@ -156,7 +156,7 @@ const Contact = () => {
 
               {/* Message */}
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm text-muted-foreground">Tell me about your project</label>
+                <label className="text-xs sm:text-sm text-muted-foreground">Tell us about your project</label>
                 <textarea
                   placeholder="What are you building? What's the timeline? Any specific requirements?"
                   value={formData.message}
