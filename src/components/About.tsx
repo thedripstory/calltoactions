@@ -45,28 +45,36 @@ const About = () => {
           ease: [0.22, 1, 0.36, 1]
         }} className="relative order-2 lg:order-1">
             <div className="relative flex justify-center lg:justify-start items-end">
-              {/* AG's Photo */}
+              {/* AG's Photo - larger */}
               <motion.div 
                 animate={{
-                  y: [0, -6, 0]
+                  y: [0, -6, 0],
+                  scale: hoveredImage === 'ag' ? 1.08 : hoveredImage === 'rohit' ? 0.95 : 1,
+                  opacity: hoveredImage === 'rohit' ? 0.6 : 1,
+                  zIndex: hoveredImage === 'ag' ? 30 : 10
                 }} 
                 transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
+                  y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+                  scale: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+                  opacity: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
                 }} 
                 onMouseEnter={() => setHoveredImage('ag')}
                 onMouseLeave={() => setHoveredImage(null)}
-                className={`relative z-10 w-48 sm:w-56 md:w-64 cursor-pointer transition-all duration-500 ${
-                  hoveredImage === 'ag' ? 'scale-110 z-30' : hoveredImage === 'rohit' ? 'scale-95 opacity-60' : ''
-                }`}
+                className="relative w-52 sm:w-64 md:w-72 cursor-pointer"
               >
-                <div className={`aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl transition-all duration-500 ${
-                  hoveredImage === 'ag' ? 'border-primary shadow-primary/40' : 'border-border/50 shadow-primary/10'
-                }`}>
+                <motion.div 
+                  className="aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl"
+                  animate={{
+                    borderColor: hoveredImage === 'ag' ? 'hsl(var(--primary))' : 'hsl(var(--border) / 0.5)',
+                    boxShadow: hoveredImage === 'ag' 
+                      ? '0 25px 50px -12px hsl(var(--primary) / 0.4)' 
+                      : '0 25px 50px -12px hsl(var(--primary) / 0.1)'
+                  }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
                   <img src={agPhoto} alt="AG - Co-Founder of calltoactions" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-                </div>
+                </motion.div>
                 {/* AG's badge */}
                 <motion.div initial={{
                   opacity: 0,
@@ -78,57 +86,79 @@ const About = () => {
                   duration: 0.5,
                   delay: 0.6
                 }} className="absolute -left-3 sm:-left-6 bottom-6 sm:bottom-10 z-20">
-                  <motion.div animate={{
-                    y: [0, -4, 0]
-                  }} transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }} className={`bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl transition-all duration-500 ${
-                    hoveredImage === 'ag' ? 'border-primary' : 'border-border'
-                  }`}>
+                  <motion.div 
+                    animate={{
+                      y: [0, -4, 0],
+                      borderColor: hoveredImage === 'ag' ? 'hsl(var(--primary))' : 'hsl(var(--border))'
+                    }} 
+                    transition={{
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      borderColor: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+                    }} 
+                    className="bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl"
+                  >
                     <p className="text-lg sm:text-2xl font-display font-bold text-primary">AG</p>
                     <p className="text-[9px] sm:text-xs text-muted-foreground">Co-Founder</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
               
-              {/* Rohit's Photo - overlapping */}
+              {/* Rohit's Photo - smaller, overlapping */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                animate={isInView ? { 
+                  opacity: hoveredImage === 'ag' ? 0.6 : 1, 
+                  scale: hoveredImage === 'rohit' ? 1.08 : hoveredImage === 'ag' ? 0.95 : 1,
+                  zIndex: hoveredImage === 'rohit' ? 30 : 20
+                } : { opacity: 0, scale: 0.8 }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: isInView ? 0 : 0.4,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
                 onMouseEnter={() => setHoveredImage('rohit')}
                 onMouseLeave={() => setHoveredImage(null)}
-                className={`relative -ml-12 sm:-ml-16 mt-12 sm:mt-16 z-20 w-48 sm:w-56 md:w-64 cursor-pointer transition-all duration-500 ${
-                  hoveredImage === 'rohit' ? 'scale-110 z-30' : hoveredImage === 'ag' ? 'scale-95 opacity-60' : ''
-                }`}
+                className="relative -ml-14 sm:-ml-20 mt-16 sm:mt-24 w-40 sm:w-48 md:w-56 cursor-pointer"
               >
-                <motion.div animate={{
-                  y: [0, -8, 0]
-                }} transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}>
-                  <div className={`aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl transition-all duration-500 ${
-                    hoveredImage === 'rohit' ? 'border-primary shadow-primary/40' : 'border-background shadow-primary/20'
-                  }`}>
+                <motion.div 
+                  animate={{
+                    y: [0, -8, 0]
+                  }} 
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                >
+                  <motion.div 
+                    className="aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl"
+                    animate={{
+                      borderColor: hoveredImage === 'rohit' ? 'hsl(var(--primary))' : 'hsl(var(--background))',
+                      boxShadow: hoveredImage === 'rohit' 
+                        ? '0 25px 50px -12px hsl(var(--primary) / 0.4)' 
+                        : '0 25px 50px -12px hsl(var(--primary) / 0.2)'
+                    }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  >
                     <img 
                       src={rohitPhoto} 
                       alt="Rohit - Co-Founder of calltoactions" 
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-                  </div>
+                  </motion.div>
                   {/* Rohit's badge */}
-                  <div className={`absolute -right-3 sm:-right-6 bottom-6 sm:bottom-10 bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl z-30 transition-all duration-500 ${
-                    hoveredImage === 'rohit' ? 'border-primary' : 'border-border'
-                  }`}>
+                  <motion.div 
+                    className="absolute -right-3 sm:-right-6 bottom-6 sm:bottom-10 bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl z-30"
+                    animate={{
+                      borderColor: hoveredImage === 'rohit' ? 'hsl(var(--primary))' : 'hsl(var(--border))'
+                    }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  >
                     <p className="text-lg sm:text-2xl font-display font-bold text-primary">Rohit</p>
                     <p className="text-[9px] sm:text-xs text-muted-foreground">Co-Founder</p>
-                  </div>
+                  </motion.div>
                 </motion.div>
               </motion.div>
               
