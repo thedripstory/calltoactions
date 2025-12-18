@@ -42,7 +42,7 @@ const Testimonials = () => {
             What They <span className="text-primary">&lt;say/&gt;</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
-            Don't take my word for it. Here's what clients have to say.
+            Don't take our word for it. Here's what clients have to say.
           </p>
         </motion.div>
 

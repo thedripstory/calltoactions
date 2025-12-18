@@ -14,7 +14,7 @@ const steps = [
     icon: Lightbulb,
     number: '02',
     title: 'Strategy & Design',
-    description: 'I create a plan tailored to your needs—wireframes, design concepts, and a clear roadmap for your project.',
+    description: 'We create a plan tailored to your needs—wireframes, design concepts, and a clear roadmap for your project.',
   },
   {
     icon: Code,
@@ -26,7 +26,7 @@ const steps = [
     icon: Rocket,
     number: '04',
     title: 'Launch & Support',
-    description: 'Your site goes live, and I stick around to make sure everything runs smoothly. Ongoing support when you need it.',
+    description: 'Your site goes live, and we stick around to make sure everything runs smoothly. Ongoing support when you need it.',
   },
 ];
 
@@ -48,7 +48,7 @@ const Process = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
-            How I <span className="text-primary">&lt;work/&gt;</span>
+            How we <span className="text-primary">&lt;work/&gt;</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
             A simple, streamlined process that keeps you in the loop and delivers results on time.
