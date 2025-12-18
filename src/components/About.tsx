@@ -49,7 +49,7 @@ const About = () => {
               <motion.div 
                 animate={{
                   y: [0, -6, 0],
-                  scale: hoveredImage === 'ag' ? 1.08 : hoveredImage === 'rohit' ? 0.95 : 1,
+                  scale: hoveredImage === 'ag' ? 1.05 : hoveredImage === 'rohit' ? 0.88 : 1,
                   opacity: hoveredImage === 'rohit' ? 0.6 : 1,
                   zIndex: hoveredImage === 'ag' ? 30 : 10
                 }} 
@@ -108,7 +108,7 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { 
                   opacity: hoveredImage === 'ag' ? 0.6 : 1, 
-                  scale: hoveredImage === 'rohit' ? 1.08 : hoveredImage === 'ag' ? 0.95 : 1,
+                  scale: hoveredImage === 'rohit' ? 1.25 : hoveredImage === 'ag' ? 0.92 : 1,
                   zIndex: hoveredImage === 'rohit' ? 30 : 20
                 } : { opacity: 0, scale: 0.8 }}
                 transition={{ 
