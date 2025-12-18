@@ -5,17 +5,17 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "AG transformed our outdated website into a conversion machine. Our leads increased by 200% in just two months. Best investment we've made.",
+    quote: "The calltoactions team transformed our outdated website into a conversion machine. Our leads increased by 200% in just two months. Best investment we've made.",
     author: "Priya Sharma",
     role: "CEO, TechStart India",
   },
   {
-    quote: "Working with AG was refreshingly different. No BS, just clear communication and exceptional results. Our site loads in under a second now.",
+    quote: "Working with AG & Rohit was refreshingly different. No BS, just clear communication and exceptional results. Our site loads in under a second now.",
     author: "Rahul Mehta",
     role: "Founder, GrowthCo",
   },
   {
-    quote: "Finally, a developer who understands business. AG didn't just build a website—he built a tool that actually drives revenue.",
+    quote: "Finally, a team that understands business. AG & Rohit didn't just build a website—they built a tool that actually drives revenue.",
     author: "Ananya Patel",
     role: "Marketing Director, ScaleUp",
   },
