@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { TrendingUp, Clock, Award } from 'lucide-react';
 import agPhoto from '@/assets/ag-photo.jpeg';
 
@@ -22,6 +22,7 @@ const stats = [{
 
 const About = () => {
   const ref = useRef(null);
+  const [hoveredImage, setHoveredImage] = useState<'ag' | 'rohit' | null>(null);
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px"
@@ -43,16 +44,26 @@ const About = () => {
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1]
         }} className="relative order-2 lg:order-1">
-            <div className="relative flex justify-center lg:justify-start">
+            <div className="relative flex justify-center lg:justify-start items-end">
               {/* AG's Photo */}
-              <motion.div animate={{
-                y: [0, -6, 0]
-              }} transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }} className="relative z-10 w-36 sm:w-44">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/10">
+              <motion.div 
+                animate={{
+                  y: [0, -6, 0]
+                }} 
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }} 
+                onMouseEnter={() => setHoveredImage('ag')}
+                onMouseLeave={() => setHoveredImage(null)}
+                className={`relative z-10 w-48 sm:w-56 md:w-64 cursor-pointer transition-all duration-500 ${
+                  hoveredImage === 'ag' ? 'scale-110 z-30' : hoveredImage === 'rohit' ? 'scale-95 opacity-60' : ''
+                }`}
+              >
+                <div className={`aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl transition-all duration-500 ${
+                  hoveredImage === 'ag' ? 'border-primary shadow-primary/40' : 'border-border/50 shadow-primary/10'
+                }`}>
                   <img src={agPhoto} alt="AG - Co-Founder of calltoactions" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
@@ -66,16 +77,18 @@ const About = () => {
                 } : {}} transition={{
                   duration: 0.5,
                   delay: 0.6
-                }} className="absolute -left-3 sm:-left-4 bottom-4 sm:bottom-6 z-20">
+                }} className="absolute -left-3 sm:-left-6 bottom-6 sm:bottom-10 z-20">
                   <motion.div animate={{
                     y: [0, -4, 0]
                   }} transition={{
                     duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut"
-                  }} className="bg-card/95 backdrop-blur-sm border border-border rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 shadow-xl">
-                    <p className="text-base sm:text-xl font-display font-bold text-primary">AG</p>
-                    <p className="text-[8px] sm:text-[10px] text-muted-foreground">Co-Founder</p>
+                  }} className={`bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl transition-all duration-500 ${
+                    hoveredImage === 'ag' ? 'border-primary' : 'border-border'
+                  }`}>
+                    <p className="text-lg sm:text-2xl font-display font-bold text-primary">AG</p>
+                    <p className="text-[9px] sm:text-xs text-muted-foreground">Co-Founder</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -85,7 +98,11 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative -ml-8 sm:-ml-10 mt-8 sm:mt-12 z-20 w-36 sm:w-44"
+                onMouseEnter={() => setHoveredImage('rohit')}
+                onMouseLeave={() => setHoveredImage(null)}
+                className={`relative -ml-12 sm:-ml-16 mt-12 sm:mt-16 z-20 w-48 sm:w-56 md:w-64 cursor-pointer transition-all duration-500 ${
+                  hoveredImage === 'rohit' ? 'scale-110 z-30' : hoveredImage === 'ag' ? 'scale-95 opacity-60' : ''
+                }`}
               >
                 <motion.div animate={{
                   y: [0, -8, 0]
@@ -95,7 +112,9 @@ const About = () => {
                   ease: "easeInOut",
                   delay: 0.5
                 }}>
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-background shadow-2xl shadow-primary/20">
+                  <div className={`aspect-[3/4] rounded-2xl overflow-hidden border-2 shadow-2xl transition-all duration-500 ${
+                    hoveredImage === 'rohit' ? 'border-primary shadow-primary/40' : 'border-background shadow-primary/20'
+                  }`}>
                     <img 
                       src={rohitPhoto} 
                       alt="Rohit - Co-Founder of calltoactions" 
@@ -104,16 +123,18 @@ const About = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                   </div>
                   {/* Rohit's badge */}
-                  <div className="absolute -right-3 sm:-right-4 bottom-4 sm:bottom-6 bg-card/95 backdrop-blur-sm border border-border rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 shadow-xl z-30">
-                    <p className="text-base sm:text-xl font-display font-bold text-primary">Rohit</p>
-                    <p className="text-[8px] sm:text-[10px] text-muted-foreground">Co-Founder</p>
+                  <div className={`absolute -right-3 sm:-right-6 bottom-6 sm:bottom-10 bg-card/95 backdrop-blur-sm border rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl z-30 transition-all duration-500 ${
+                    hoveredImage === 'rohit' ? 'border-primary' : 'border-border'
+                  }`}>
+                    <p className="text-lg sm:text-2xl font-display font-bold text-primary">Rohit</p>
+                    <p className="text-[9px] sm:text-xs text-muted-foreground">Co-Founder</p>
                   </div>
                 </motion.div>
               </motion.div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 right-0 w-24 sm:w-32 h-24 sm:h-32 border border-primary/20 rounded-2xl -z-10" />
-              <div className="absolute -bottom-4 -left-4 w-20 sm:w-24 h-20 sm:h-24 bg-primary/10 rounded-xl -z-10" />
+              <div className="absolute -top-6 right-8 w-28 sm:w-40 h-28 sm:h-40 border border-primary/20 rounded-2xl -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-xl -z-10" />
             </div>
           </motion.div>
 
