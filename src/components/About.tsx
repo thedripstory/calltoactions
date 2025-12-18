@@ -43,20 +43,41 @@ const About = () => {
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1]
         }} className="relative order-2 lg:order-1">
-            <div className="relative max-w-sm mx-auto lg:mx-0">
-              {/* AG's Photo - main */}
+            <div className="relative flex justify-center lg:justify-start">
+              {/* AG's Photo */}
               <motion.div animate={{
-              y: [0, -6, 0]
-            }} transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }} className="relative z-10">
+                y: [0, -6, 0]
+              }} transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }} className="relative z-10 w-36 sm:w-44">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/10">
                   <img src={agPhoto} alt="AG - Co-Founder of calltoactions" className="w-full h-full object-cover" />
-                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
+                {/* AG's badge */}
+                <motion.div initial={{
+                  opacity: 0,
+                  scale: 0.8
+                }} animate={isInView ? {
+                  opacity: 1,
+                  scale: 1
+                } : {}} transition={{
+                  duration: 0.5,
+                  delay: 0.6
+                }} className="absolute -left-3 sm:-left-4 bottom-4 sm:bottom-6 z-20">
+                  <motion.div animate={{
+                    y: [0, -4, 0]
+                  }} transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }} className="bg-card/95 backdrop-blur-sm border border-border rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 shadow-xl">
+                    <p className="text-base sm:text-xl font-display font-bold text-primary">AG</p>
+                    <p className="text-[8px] sm:text-[10px] text-muted-foreground">Co-Founder</p>
+                  </motion.div>
+                </motion.div>
               </motion.div>
               
               {/* Rohit's Photo - overlapping */}
@@ -64,7 +85,7 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute -right-8 sm:-right-12 top-1/3 z-20 w-32 sm:w-40"
+                className="relative -ml-8 sm:-ml-10 mt-8 sm:mt-12 z-20 w-36 sm:w-44"
               >
                 <motion.div animate={{
                   y: [0, -8, 0]
@@ -74,47 +95,25 @@ const About = () => {
                   ease: "easeInOut",
                   delay: 0.5
                 }}>
-                  <div className="aspect-square rounded-2xl overflow-hidden border-2 border-background shadow-2xl shadow-primary/20">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-background shadow-2xl shadow-primary/20">
                     <img 
                       src={rohitPhoto} 
                       alt="Rohit - Co-Founder of calltoactions" 
                       className="w-full h-full object-cover object-top"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                   </div>
                   {/* Rohit's badge */}
-                  <div className="absolute -bottom-2 -right-2 bg-card/95 backdrop-blur-sm border border-border rounded-lg px-2 py-1 shadow-lg">
-                    <p className="text-sm sm:text-base font-display font-bold text-primary">Rohit</p>
+                  <div className="absolute -right-3 sm:-right-4 bottom-4 sm:bottom-6 bg-card/95 backdrop-blur-sm border border-border rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 shadow-xl z-30">
+                    <p className="text-base sm:text-xl font-display font-bold text-primary">Rohit</p>
                     <p className="text-[8px] sm:text-[10px] text-muted-foreground">Co-Founder</p>
                   </div>
                 </motion.div>
               </motion.div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 sm:w-32 h-24 sm:h-32 border border-primary/20 rounded-2xl -z-10" />
+              <div className="absolute -top-4 right-0 w-24 sm:w-32 h-24 sm:h-32 border border-primary/20 rounded-2xl -z-10" />
               <div className="absolute -bottom-4 -left-4 w-20 sm:w-24 h-20 sm:h-24 bg-primary/10 rounded-xl -z-10" />
-              
-              {/* AG's Floating badge */}
-              <motion.div initial={{
-              opacity: 0,
-              scale: 0.8
-            }} animate={isInView ? {
-              opacity: 1,
-              scale: 1
-            } : {}} transition={{
-              duration: 0.5,
-              delay: 0.6
-            }} className="absolute -left-4 sm:-left-8 bottom-8 sm:bottom-12 z-20">
-                <motion.div animate={{
-                y: [0, -4, 0]
-              }} transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }} className="bg-card/95 backdrop-blur-sm border border-border rounded-xl p-3 sm:p-4 shadow-xl">
-                  <p className="text-xl sm:text-2xl font-display font-bold text-primary">AG</p>
-                  <p className="text-[10px] sm:text-xs text-muted-foreground">Co-Founder</p>
-                </motion.div>
-              </motion.div>
             </div>
           </motion.div>
 
