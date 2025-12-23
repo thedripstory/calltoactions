@@ -1,0 +1,22 @@
+name: Deploy React to Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Manual trigger option
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+      env:
+        PUBLIC_URL: /  # For subpath; use https://calltoactions.live/ for root
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./build
+    - uses: actions/deploy-pages@v4
