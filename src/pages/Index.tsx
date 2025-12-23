@@ -17,13 +17,13 @@ const Index = () => {
       <SectionDivider />
       <About />
       <SectionDivider />
-      
+      {/* <Clients /> */}
       <SectionDivider />
       <Services />
       <SectionDivider />
       <Process />
       <SectionDivider />
-      
+      <Portfolio />
       <SectionDivider />
       <Testimonials />
       <SectionDivider />
